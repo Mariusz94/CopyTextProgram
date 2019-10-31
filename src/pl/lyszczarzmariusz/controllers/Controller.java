@@ -13,7 +13,7 @@ public class Controller {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
-    
+
 
     @FXML
     private Button button1;

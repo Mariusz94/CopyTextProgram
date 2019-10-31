@@ -21,6 +21,8 @@ public class Main extends Application {
         Scene scene = new Scene(stackPane, 243, 168);
 
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.setFullScreen(false);
         primaryStage.setAlwaysOnTop(true);
         primaryStage.setTitle("Copy Text");
         primaryStage.show();
