@@ -10,8 +10,10 @@ import java.awt.datatransfer.StringSelection;
 
 
 public class Controller {
-    Clipboard clipboard;
-    StringSelection selection;
+    private Clipboard clipboard;
+    private StringSelection selection;
+    private String text;
+    
 
     @FXML
     private Button button1;
@@ -35,7 +37,7 @@ public class Controller {
     @FXML
     private TextField in5;
 
-    public Controller() throws AWTException {
+    public Controller() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         System.out.println("Zainicjalizowany Controller");
     }
@@ -75,11 +77,11 @@ public class Controller {
     }
 
     private void copyText(TextField in) {
-        String text = in.getText();
+        text = in.getText();
         if(text == null){
             text = "null";
         }
-        StringSelection selection = new StringSelection(text);
+        selection = new StringSelection(text);
         clipboard.setContents(selection, null);
     }
 }
