@@ -1,4 +1,4 @@
-package pl.lyszczarzmariusz.controllers;
+package pl.lyszczarzmariusz;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
