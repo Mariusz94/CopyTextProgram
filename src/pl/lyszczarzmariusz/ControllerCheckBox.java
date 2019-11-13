@@ -16,6 +16,7 @@ public class ControllerCheckBox {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
+    private JTextArea jTextArea;
 
 
     @FXML
@@ -72,6 +73,7 @@ public class ControllerCheckBox {
 
     public ControllerCheckBox() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        jTextArea = new JTextArea();
         System.out.println("Zainicjalizowany Controller");
     }
 
@@ -118,13 +120,11 @@ public class ControllerCheckBox {
         clipboard.setContents(selection, null);
     }
 
+//jTextArea.selectAll();
     private void copyHandler(TextField in, Checkbox ch1, Checkbox ch2){
         copyTextFromInput(in);
 
-        
-        if (ch2.getState()){
-            JTextArea jTextArea = new JTextArea();
-            jTextArea.selectAll();
-        }
+
+
     }
 }
