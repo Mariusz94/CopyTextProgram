@@ -1,16 +1,18 @@
 package pl.lyszczarzmariusz;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.ActionListener;
 
 
-public class ControllerRadio {
+public class ControllerCheckBox {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
@@ -68,7 +70,7 @@ public class ControllerRadio {
     @FXML
     private Checkbox checkbox5_2;
 
-    public ControllerRadio() {
+    public ControllerCheckBox() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         System.out.println("Zainicjalizowany Controller");
     }
@@ -84,35 +86,45 @@ public class ControllerRadio {
 
     @FXML
     public void onActionButton1(){
-        copyText(in1);
+        copyTextFromInput(in1);
     }
 
     @FXML
     public void onActionButton2(){
-        copyText(in2);
+        copyTextFromInput(in2);
     }
 
     @FXML
     public void onActionButton3(){
-        copyText(in3);
+        copyTextFromInput(in3);
     }
 
     @FXML
     public void onActionButton4(){
-        copyText(in4);
+        copyTextFromInput(in4);
     }
 
     @FXML
     public void onActionButton5(){
-        copyText(in5);
+        copyTextFromInput(in5);
     }
 
-    private void copyText(TextField in) {
+    private void copyTextFromInput(TextField in) {
         text = in.getText();
         if(text == null){
             text = "null";
         }
         selection = new StringSelection(text);
         clipboard.setContents(selection, null);
+    }
+
+    private void copyHandler(TextField in, Checkbox ch1, Checkbox ch2){
+        copyTextFromInput(in);
+
+        
+        if (ch2.getState()){
+            JTextArea jTextArea = new JTextArea();
+            jTextArea.selectAll();
+        }
     }
 }
