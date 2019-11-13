@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.Controller">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox prefHeight="387.0" prefWidth="252.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -41,6 +41,36 @@
                <children>
                   <TextField fx:id="in5" />
                   <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="in6" />
+                  <Button fx:id="button6" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="in7" />
+                  <Button fx:id="button7" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="in8" />
+                  <Button fx:id="button8" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="in9" />
+                  <Button fx:id="button9" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="in10" />
+                  <Button fx:id="button10" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
                </children>
             </HBox>
          </children>

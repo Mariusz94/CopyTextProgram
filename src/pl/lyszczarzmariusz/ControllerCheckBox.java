@@ -1,9 +1,11 @@
 package pl.lyszczarzmariusz;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import javax.swing.*;
 import java.awt.*;
@@ -120,11 +122,19 @@ public class ControllerCheckBox {
         clipboard.setContents(selection, null);
     }
 
-//jTextArea.selectAll();
     private void copyHandler(TextField in, Checkbox ch1, Checkbox ch2){
         copyTextFromInput(in);
 
-
-
+        if (ch1.getState()) {
+            EventHandler<MouseEvent> mouseHandler = new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    if (ch2.getState()) {
+                        jTextArea.selectAll();
+                    }
+                    jTextArea.paste();
+                }
+            };
+        }
     }
 }
