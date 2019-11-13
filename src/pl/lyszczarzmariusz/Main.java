@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("sample.fxml"));
+        loader.setLocation(this.getClass().getResource("viewController.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
