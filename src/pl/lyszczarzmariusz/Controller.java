@@ -2,6 +2,7 @@ package pl.lyszczarzmariusz;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.TextField;
 
 import java.awt.*;
@@ -36,6 +37,14 @@ public class Controller {
     private TextField in4;
     @FXML
     private TextField in5;
+
+    @FXML
+    private CheckMenuItem stay_on_top;
+
+    public boolean isStay_on_top() {
+        System.out.println(stay_on_top.isSelected());
+        return stay_on_top.isSelected();
+    }
 
     public Controller() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();

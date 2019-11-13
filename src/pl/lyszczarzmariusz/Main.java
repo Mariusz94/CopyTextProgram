@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("viewControllerCheckBox.fxml"));
+        loader.setLocation(this.getClass().getResource("viewController.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
@@ -21,19 +21,19 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        //Controller controller = loader.getController();
-        ControllerCheckBox controllerCheckBox = loader.getController();
+        Controller controller = loader.getController();
+        //ControllerCheckBox controllerCheckBox = loader.getController();
 
         Scene scene = new Scene(stackPane, 243, 168);
 
         primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
         primaryStage.setFullScreen(false);
-        primaryStage.setAlwaysOnTop(true);
+        primaryStage.setAlwaysOnTop(controller.isStay_on_top());
         primaryStage.setTitle("Copy Text");
         primaryStage.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
