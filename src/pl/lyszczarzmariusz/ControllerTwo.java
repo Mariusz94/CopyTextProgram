@@ -63,7 +63,7 @@ public class ControllerTwo {
     }
 
     @FXML
-    void initialize(){
+    void initialize() {
         button1.setText("Copy");
         button2.setText("Copy");
         button3.setText("Copy");
@@ -77,58 +77,58 @@ public class ControllerTwo {
     }
 
     @FXML
-    public void onActionButton1(){
+    public void onActionButton1() {
         copyText(in1);
     }
 
     @FXML
-    public void onActionButton2(){
+    public void onActionButton2() {
         copyText(in2);
     }
 
     @FXML
-    public void onActionButton3(){
+    public void onActionButton3() {
         copyText(in3);
     }
 
     @FXML
-    public void onActionButton4(){
+    public void onActionButton4() {
         copyText(in4);
     }
 
     @FXML
-    public void onActionButton5(){
+    public void onActionButton5() {
         copyText(in5);
     }
 
     @FXML
-    public void onActionButton6(){
+    public void onActionButton6() {
         copyText(in6);
     }
 
     @FXML
-    public void onActionButton7(){
+    public void onActionButton7() {
         copyText(in7);
     }
 
     @FXML
-    public void onActionButton8(){
+    public void onActionButton8() {
         copyText(in8);
     }
 
     @FXML
-    public void onActionButton9(){
+    public void onActionButton9() {
         copyText(in9);
     }
 
     @FXML
-    public void onActionButton10(){
+    public void onActionButton10() {
         copyText(in10);
     }
 
     private void copyText(TextField in) {
         text = in.getText();
-        if(text == null){
+        if (text == null) {
             text = "null";
         }
         selection = new StringSelection(text);

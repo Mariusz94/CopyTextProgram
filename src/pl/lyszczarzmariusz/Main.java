@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("viewControllerCheckBox.fxml"));
         StackPane stackPane = null;
@@ -24,7 +24,6 @@ public class Main extends Application {
         //Controller controller = loader.getController();
         ControllerCheckBox controllerCheckBox = loader.getController();
 
-
         Scene scene = new Scene(stackPane, 243, 168);
 
         primaryStage.setScene(scene);
@@ -34,8 +33,7 @@ public class Main extends Application {
         primaryStage.setTitle("Copy Text");
         primaryStage.show();
     }
-
-
+    
     public static void main(String[] args) {
         launch(args);
     }

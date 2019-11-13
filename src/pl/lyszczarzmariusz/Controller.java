@@ -43,7 +43,7 @@ public class Controller {
     }
 
     @FXML
-    void initialize(){
+    void initialize() {
         button1.setText("Copy");
         button2.setText("Copy");
         button3.setText("Copy");
@@ -52,33 +52,33 @@ public class Controller {
     }
 
     @FXML
-    public void onActionButton1(){
+    public void onActionButton1() {
         copyText(in1);
     }
 
     @FXML
-    public void onActionButton2(){
+    public void onActionButton2() {
         copyText(in2);
     }
 
     @FXML
-    public void onActionButton3(){
+    public void onActionButton3() {
         copyText(in3);
     }
 
     @FXML
-    public void onActionButton4(){
+    public void onActionButton4() {
         copyText(in4);
     }
 
     @FXML
-    public void onActionButton5(){
+    public void onActionButton5() {
         copyText(in5);
     }
 
     private void copyText(TextField in) {
         text = in.getText();
-        if(text == null){
+        if (text == null) {
             text = "null";
         }
         selection = new StringSelection(text);
