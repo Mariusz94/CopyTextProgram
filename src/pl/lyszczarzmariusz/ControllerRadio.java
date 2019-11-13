@@ -39,7 +39,34 @@ public class ControllerRadio {
     private TextField in5;
 
     @FXML
-    private RadioButton radioButton1_1;
+    private Checkbox checkbox1_1;
+
+    @FXML
+    private Checkbox checkbox1_2;
+
+    @FXML
+    private Checkbox checkbox2_1;
+
+    @FXML
+    private Checkbox checkbox2_2;
+
+    @FXML
+    private Checkbox checkbox3_1;
+
+    @FXML
+    private Checkbox checkbox3_2;
+
+    @FXML
+    private Checkbox checkbox4_1;
+
+    @FXML
+    private Checkbox checkbox4_2;
+
+    @FXML
+    private Checkbox checkbox5_1;
+
+    @FXML
+    private Checkbox checkbox5_2;
 
     public ControllerRadio() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
