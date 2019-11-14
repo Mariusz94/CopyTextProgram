@@ -5,13 +5,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="228.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.controller.ControllerCheckBox">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.controller.ControllerCheckBox">
     <children>
-        <VBox prefHeight="200.0" prefWidth="100.0">
+        <VBox>
             <children>
-                <HBox prefHeight="90.0" prefWidth="200.0">
+                <HBox>
                     <children>
-                        <MenuBar prefHeight="22.0" prefWidth="328.0">
+                        <MenuBar minWidth="300.0">
                             <menus>
                                 <Menu mnemonicParsing="false" text="File">
                                     <items>
@@ -33,14 +33,22 @@
                                 </Menu>
                             </menus>
                         </MenuBar>
-                        <TextArea prefHeight="22.0" prefWidth="39.0" promptText="WORK" text="A" />
-                        <TextArea prefHeight="22.0" prefWidth="36.0" text="S" />
+                  <Label text="A">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="S">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox>
                     <children>
-                        <TextField fx:id="in1" />
-                        <Button fx:id="button1" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0" text="Copy" />
+                        <TextField fx:id="in1" minWidth="200.0" />
+                        <Button fx:id="button1" minWidth="100.0" mnemonicParsing="false" onAction="#onActionButton1" text="Copy" />
                         <CheckBox fx:id="checkbox1_1" mnemonicParsing="false">
                             <HBox.margin>
                                 <Insets left="20.0" />
@@ -49,10 +57,10 @@
                         <CheckBox fx:id="checkbox1_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox>
                     <children>
-                        <TextField fx:id="in2" />
-                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton2" prefWidth="130.0" text="Copy" />
+                        <TextField fx:id="in2" minWidth="200.0" />
+                        <Button fx:id="button2" minWidth="100.0" mnemonicParsing="false" onAction="#onActionButton2" text="Copy" />
                         <CheckBox fx:id="checkbox2_1" mnemonicParsing="false">
                             <HBox.margin>
                                 <Insets left="20.0" />
@@ -61,10 +69,10 @@
                         <CheckBox fx:id="checkbox2_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox>
                     <children>
-                        <TextField fx:id="in3" />
-                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton3" prefWidth="130.0" text="Copy" />
+                        <TextField fx:id="in3" minWidth="200.0" />
+                        <Button fx:id="button3" minWidth="100.0" mnemonicParsing="false" onAction="#onActionButton3" text="Copy" />
                         <CheckBox fx:id="checkbox3_1" mnemonicParsing="false">
                             <HBox.margin>
                                 <Insets left="20.0" />
@@ -73,10 +81,10 @@
                         <CheckBox fx:id="checkbox3_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox>
                     <children>
-                        <TextField fx:id="in4" />
-                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton4" prefWidth="130.0" text="Copy" />
+                        <TextField fx:id="in4" minWidth="200.0" />
+                        <Button fx:id="button4" minWidth="100.0" mnemonicParsing="false" onAction="#onActionButton4" text="Copy" />
                         <CheckBox fx:id="checkbox4_1" mnemonicParsing="false">
                             <HBox.margin>
                                 <Insets left="20.0" />
@@ -85,10 +93,10 @@
                         <CheckBox fx:id="checkbox4_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox>
                     <children>
-                        <TextField fx:id="in5" />
-                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" prefWidth="130.0" text="Copy" />
+                        <TextField fx:id="in5" minWidth="200.0" />
+                        <Button fx:id="button5" minWidth="100.0" mnemonicParsing="false" onAction="#onActionButton5" text="Copy" />
                         <CheckBox fx:id="checkbox5_1" mnemonicParsing="false">
                             <HBox.margin>
                                 <Insets left="20.0" />

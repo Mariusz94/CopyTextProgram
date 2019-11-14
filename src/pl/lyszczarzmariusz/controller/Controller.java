@@ -17,7 +17,7 @@ import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 
 
-public class Controller implements ControllerParent {
+public class Controller {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
@@ -103,13 +103,13 @@ public class Controller implements ControllerParent {
 
     @FXML
     public void fiveFieldItem() {
-
+        //do  nothing
     }
 
     @FXML
     public void tenFieldItem() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewControllerTwo.fxml"));
+        loader.setLocation(Main.getPath("scene/viewControllerTwo.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
@@ -119,13 +119,14 @@ public class Controller implements ControllerParent {
         ControllerTwo controllerTwo = loader.getController();
         controllerTwo.setControllerMain(controllerMain);
         controllerMain.setScreen(stackPane);
+        Main.setSizeWindow(300,390);
 
     }
 
     @FXML
     public void fiveFieldCheckItem() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewControllerCheckBox.fxml"));
+        loader.setLocation(Main.getPath("scene/viewControllerCheckBox.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
@@ -135,6 +136,7 @@ public class Controller implements ControllerParent {
         ControllerCheckBox controllerCheckBox = loader.getController();
         controllerCheckBox.setControllerMain(controllerMain);
         controllerMain.setScreen(stackPane);
+        Main.setSizeWindow(400,235);
     }
 
 

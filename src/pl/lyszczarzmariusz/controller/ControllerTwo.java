@@ -14,11 +14,10 @@ import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 
 
-public class ControllerTwo implements ControllerParent{
+public class ControllerTwo {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
-    private Main main;
     private ControllerMain controllerMain;
 
 
@@ -67,9 +66,9 @@ public class ControllerTwo implements ControllerParent{
     @FXML
     private CheckMenuItem stayOnTopItem;
 
-    public ControllerTwo(Main main) {
+    public ControllerTwo() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        this.main = main;
+
         System.out.println("Zainicjalizowany ControllerTwo");
     }
 
@@ -159,16 +158,17 @@ public class ControllerTwo implements ControllerParent{
     @FXML
     public void fiveFieldCheckItem() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewControllerCheckBox.fxml"));
+        loader.setLocation(Main.getPath("scene/viewControllerCheckBox.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        ControllerCheckBox controllerCheckBox = loader.getController();
+        controllerCheckBox.setControllerMain(controllerMain);
         controllerMain.setScreen(stackPane);
-    }
+        Main.setSizeWindow(400,235);    }
 
     public void setControllerMain(ControllerMain controllerMain) {
         this.controllerMain = controllerMain;

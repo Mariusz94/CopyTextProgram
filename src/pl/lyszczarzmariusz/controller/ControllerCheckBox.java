@@ -19,12 +19,11 @@ import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 
 
-public class ControllerCheckBox implements ControllerParent {
+public class ControllerCheckBox{
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
     private JTextArea jTextArea;
-    private Main main;
     private ControllerMain controllerMain;
 
     @FXML
@@ -73,10 +72,9 @@ public class ControllerCheckBox implements ControllerParent {
     @FXML
     private CheckMenuItem stayOnTopItem;
 
-    public ControllerCheckBox(Main main) {
+    public ControllerCheckBox() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         jTextArea = new JTextArea();
-        this.main = main;
         System.out.println("Zainicjalizowany ControllerCheckBox");
     }
 
@@ -153,15 +151,18 @@ public class ControllerCheckBox implements ControllerParent {
     @FXML
     public void tenFieldItem() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewControllerTwo.fxml"));
+        loader.setLocation(Main.getPath("scene/viewControllerTwo.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        ControllerTwo controllerTwo = loader.getController();
+        controllerTwo.setControllerMain(controllerMain);
 
         controllerMain.setScreen(stackPane);
+        Main.setSizeWindow(300,390);
     }
 
     @FXML

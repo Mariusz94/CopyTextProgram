@@ -5,24 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import pl.lyszczarzmariusz.controller.Controller;
-import pl.lyszczarzmariusz.controller.ControllerParent;
-import pl.lyszczarzmariusz.controller.ControllerTwo;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class Main extends Application {
     public static Stage window = null;
-
 
     @Override
     public void start(Stage primaryStage) {
         window = primaryStage;
 
-        //changeScene("scene/viewController.fxml", new Controller());
-
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewControllerMain.fxml"));
+        loader.setLocation(Main.getPath("scene/viewControllerMain.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
@@ -40,6 +35,11 @@ public class Main extends Application {
         window.show();
     }
 
+    public static void setSizeWindow(int x, int y){
+        window.setWidth(x);
+        window.setHeight(y);
+    }
+
     public static void changeStayOnTop(boolean value){
         if (window.isAlwaysOnTop() != value) {
             window.setAlwaysOnTop(value);
@@ -50,26 +50,12 @@ public class Main extends Application {
         window.close();
     }
 
-    /*public void changeScene(String sourceNameFXML){
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource(sourceNameFXML));
-        StackPane stackPane = null;
-
-        try {
-            stackPane = loader.load();
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
-
-        Scene scene = new Scene(stackPane);
-
-        window.setScene(scene);
-    }*/
-
-
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static URL getPath(String url){
+        return Main.class.getResource(url);
     }
 
 }

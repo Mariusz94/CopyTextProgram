@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import pl.lyszczarzmariusz.Main;
 
 import java.io.IOException;
 
@@ -18,21 +19,20 @@ public class ControllerMain {
 
     public void loadViewController() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewController.fxml"));
+
+        loader.setLocation(Main.getPath("scene/viewController.fxml"));
         StackPane stackPane = null;
 
         try {
             stackPane = loader.load();
         } catch (IOException e) {
-
             e.printStackTrace();
         }
 
         Controller controller = loader.getController();
         controller.setMainController(this);
         setScreen(stackPane);
-
-        Scene scene = new Scene(stackPane);
+        Main.setSizeWindow(300,235);
     }
 
     public void setScreen(StackPane stackPane) {
@@ -40,3 +40,4 @@ public class ControllerMain {
         mainStackPane.getChildren().add(stackPane);
     }
 }
+// TODO Wszystkie templatki tu tworzyć przesyłać okno rodzica i wywoływać w innych klasach
