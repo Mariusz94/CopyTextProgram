@@ -1,18 +1,25 @@
 package pl.lyszczarzmariusz.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import pl.lyszczarzmariusz.Main;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.io.IOException;
 
 
 public class ControllerTwo implements ControllerParent{
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
+    private Main main;
+    private ControllerMain controllerMain;
 
 
     @FXML
@@ -57,23 +64,17 @@ public class ControllerTwo implements ControllerParent{
     @FXML
     private TextField in10;
 
-    public ControllerTwo() {
+    @FXML
+    private CheckMenuItem stayOnTopItem;
+
+    public ControllerTwo(Main main) {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        this.main = main;
         System.out.println("Zainicjalizowany ControllerTwo");
     }
 
     @FXML
     void initialize() {
-        button1.setText("Copy");
-        button2.setText("Copy");
-        button3.setText("Copy");
-        button4.setText("Copy");
-        button5.setText("Copy");
-        button6.setText("Copy");
-        button7.setText("Copy");
-        button8.setText("Copy");
-        button9.setText("Copy");
-        button10.setText("Copy");
     }
 
     @FXML
@@ -133,5 +134,43 @@ public class ControllerTwo implements ControllerParent{
         }
         selection = new StringSelection(text);
         clipboard.setContents(selection, null);
+    }
+
+    @FXML
+    public void stayOnTopAction(){
+        Main.changeStayOnTop(stayOnTopItem.isSelected());
+    }
+
+    @FXML
+    public void closeAction() {
+        Main.closeApplication();
+    }
+
+    @FXML
+    public void fiveFieldItem() {
+        controllerMain.loadViewController();
+    }
+
+    @FXML
+    public void tenFieldItem() {
+        //do nothing
+    }
+
+    @FXML
+    public void fiveFieldCheckItem() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("scene/viewControllerCheckBox.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        controllerMain.setScreen(stackPane);
+    }
+
+    public void setControllerMain(ControllerMain controllerMain) {
+        this.controllerMain = controllerMain;
     }
 }

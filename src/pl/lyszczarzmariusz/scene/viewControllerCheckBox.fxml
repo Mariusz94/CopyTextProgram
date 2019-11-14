@@ -1,86 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="228.0"
-           prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="pl.lyszczarzmariusz.controller.ControllerCheckBox">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="228.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.controller.ControllerCheckBox">
     <children>
         <VBox prefHeight="200.0" prefWidth="100.0">
             <children>
                 <HBox prefHeight="90.0" prefWidth="200.0">
                     <children>
-                        <TextArea prefHeight="10.0" prefWidth="328.0"/>
-                        <TextArea prefHeight="38.0" prefWidth="39.0" promptText="WORK" text="A"/>
-                        <TextArea prefHeight="38.0" prefWidth="36.0" text="S"/>
+                        <MenuBar prefHeight="22.0" prefWidth="328.0">
+                            <menus>
+                                <Menu mnemonicParsing="false" text="File">
+                                    <items>
+                                        <CheckMenuItem fx:id="stayOnTopItem" mnemonicParsing="false" onAction="#stayOnTopAction" text="Stay on top" />
+                                        <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Mode">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#fiveFieldItem" text="5 Field" />
+                                        <MenuItem mnemonicParsing="false" onAction="#tenFieldItem" text="10 Field" />
+                                        <MenuItem mnemonicParsing="false" onAction="#fiveFieldCheckItem" text="5 Field witch Auto Select Auto Click" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Help">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="About" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                        <TextArea prefHeight="22.0" prefWidth="39.0" promptText="WORK" text="A" />
+                        <TextArea prefHeight="22.0" prefWidth="36.0" text="S" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <TextField fx:id="in1"/>
-                        <Button fx:id="button1" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0"
-                                text="Button"/>
+                        <TextField fx:id="in1" />
+                        <Button fx:id="button1" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0" text="Copy" />
                         <CheckBox fx:id="checkbox1_1" mnemonicParsing="false">
                             <HBox.margin>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkbox1_2" mnemonicParsing="false"/>
+                        <CheckBox fx:id="checkbox1_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <TextField fx:id="in2"/>
-                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton2" prefWidth="130.0"
-                                text="Button"/>
+                        <TextField fx:id="in2" />
+                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton2" prefWidth="130.0" text="Copy" />
                         <CheckBox fx:id="checkbox2_1" mnemonicParsing="false">
                             <HBox.margin>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkbox2_2" mnemonicParsing="false"/>
+                        <CheckBox fx:id="checkbox2_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <TextField fx:id="in3"/>
-                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton3" prefWidth="130.0"
-                                text="Button"/>
+                        <TextField fx:id="in3" />
+                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton3" prefWidth="130.0" text="Copy" />
                         <CheckBox fx:id="checkbox3_1" mnemonicParsing="false">
                             <HBox.margin>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkbox3_2" mnemonicParsing="false"/>
+                        <CheckBox fx:id="checkbox3_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <TextField fx:id="in4"/>
-                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton4" prefWidth="130.0"
-                                text="Button"/>
+                        <TextField fx:id="in4" />
+                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton4" prefWidth="130.0" text="Copy" />
                         <CheckBox fx:id="checkbox4_1" mnemonicParsing="false">
                             <HBox.margin>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkbox4_2" mnemonicParsing="false"/>
+                        <CheckBox fx:id="checkbox4_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <TextField fx:id="in5"/>
-                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" prefWidth="130.0"
-                                text="Button"/>
+                        <TextField fx:id="in5" />
+                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" prefWidth="130.0" text="Copy" />
                         <CheckBox fx:id="checkbox5_1" mnemonicParsing="false">
                             <HBox.margin>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkbox5_2" mnemonicParsing="false"/>
+                        <CheckBox fx:id="checkbox5_2" mnemonicParsing="false" />
                     </children>
                 </HBox>
             </children>

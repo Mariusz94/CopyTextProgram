@@ -8,30 +8,34 @@
     <children>
         <VBox prefHeight="187.0" prefWidth="240.0">
             <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <MenuBar prefHeight="22.0" prefWidth="252.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="File">
-                        <items>
-                              <CheckMenuItem fx:id="stayOnTopItem" mnemonicParsing="false" onAction="#stayOnTopAction" text="Stay on top" />
-                          <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Edit">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
-               </children>
-            </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <MenuBar prefHeight="22.0" prefWidth="252.0">
+                            <menus>
+                                <Menu mnemonicParsing="false" text="File">
+                                    <items>
+                                        <CheckMenuItem fx:id="stayOnTopItem" mnemonicParsing="false"
+                                                       onAction="#stayOnTopAction" text="Stay on top"/>
+                                        <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close"/>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Mode">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#fiveFieldItem" text="5 Field"/>
+                                        <MenuItem mnemonicParsing="false" onAction="#tenFieldItem" text="10 Field"/>
+                                        <MenuItem mnemonicParsing="false" onAction="#fiveFieldCheckItem"
+                                                  text="5 Field witch Auto Select Auto Click"/>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Help">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="About"/>
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                    </children>
+                </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in1" />

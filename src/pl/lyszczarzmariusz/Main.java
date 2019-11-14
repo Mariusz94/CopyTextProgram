@@ -7,12 +7,11 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import pl.lyszczarzmariusz.controller.Controller;
 import pl.lyszczarzmariusz.controller.ControllerParent;
+import pl.lyszczarzmariusz.controller.ControllerTwo;
 
 import java.io.IOException;
 
 public class Main extends Application {
-    private static boolean stayOnTop;
-    private static boolean stayOnTopProgram;
     public static Stage window = null;
 
 
@@ -20,8 +19,20 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         window = primaryStage;
 
-        Main main = new Main();
-        main.changeScene("scene/viewController.fxml", new Controller());
+        //changeScene("scene/viewController.fxml", new Controller());
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("scene/viewControllerMain.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Scene scene = new Scene(stackPane);
+
+        window.setScene(scene);
 
         window.setResizable(true);
         window.setFullScreen(false);
@@ -38,26 +49,27 @@ public class Main extends Application {
     public static void closeApplication(){
         window.close();
     }
-    public void changeScene(String sourceNameFXML, ControllerParent controller){
+
+    /*public void changeScene(String sourceNameFXML){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource(sourceNameFXML));
         StackPane stackPane = null;
+
         try {
             stackPane = loader.load();
         } catch (IOException e) {
+
             e.printStackTrace();
         }
-
-        controller = loader.getController();
 
         Scene scene = new Scene(stackPane);
 
         window.setScene(scene);
-    }
+    }*/
 
 
     public static void main(String[] args) {
         launch(args);
-       //Test test test
     }
+
 }

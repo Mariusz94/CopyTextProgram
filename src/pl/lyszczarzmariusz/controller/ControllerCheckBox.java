@@ -3,23 +3,29 @@ package pl.lyszczarzmariusz.controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import pl.lyszczarzmariusz.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.io.IOException;
 
 
-public class ControllerCheckBox {
+public class ControllerCheckBox implements ControllerParent {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
     private JTextArea jTextArea;
-
+    private Main main;
+    private ControllerMain controllerMain;
 
     @FXML
     private Button button1;
@@ -45,47 +51,38 @@ public class ControllerCheckBox {
 
     @FXML
     private CheckBox checkbox1_1;
-
     @FXML
     private CheckBox checkbox1_2;
-
     @FXML
     private CheckBox checkbox2_1;
-
     @FXML
     private CheckBox checkbox2_2;
-
     @FXML
     private CheckBox checkbox3_1;
-
     @FXML
     private CheckBox checkbox3_2;
-
     @FXML
     private CheckBox checkbox4_1;
-
     @FXML
     private CheckBox checkbox4_2;
-
     @FXML
     private CheckBox checkbox5_1;
-
     @FXML
     private CheckBox checkbox5_2;
 
-    public ControllerCheckBox() {
+    @FXML
+    private CheckMenuItem stayOnTopItem;
+
+    public ControllerCheckBox(Main main) {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         jTextArea = new JTextArea();
-        System.out.println("Zainicjalizowany Controller");
+        this.main = main;
+        System.out.println("Zainicjalizowany ControllerCheckBox");
     }
 
     @FXML
     void initialize(){
-        button1.setText("Copy");
-        button2.setText("Copy");
-        button3.setText("Copy");
-        button4.setText("Copy");
-        button5.setText("Copy");
+
     }
 
     @FXML
@@ -136,5 +133,43 @@ public class ControllerCheckBox {
                 }
             };
         }
+    }
+
+    @FXML
+    public void stayOnTopAction(){
+        Main.changeStayOnTop(stayOnTopItem.isSelected());
+    }
+
+    @FXML
+    public void closeAction() {
+        Main.closeApplication();
+    }
+
+    @FXML
+    public void fiveFieldItem() {
+        controllerMain.loadViewController();
+    }
+
+    @FXML
+    public void tenFieldItem() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("scene/viewControllerTwo.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        controllerMain.setScreen(stackPane);
+    }
+
+    @FXML
+    public void fiveFieldCheckItem() {
+        //do nothing
+    }
+
+    public void setControllerMain(ControllerMain controllerMain) {
+        this.controllerMain = controllerMain;
     }
 }

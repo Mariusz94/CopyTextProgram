@@ -1,6 +1,7 @@
 package pl.lyszczarzmariusz.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -13,12 +14,14 @@ import pl.lyszczarzmariusz.Main;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.io.IOException;
 
 
 public class Controller implements ControllerParent {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
+    private ControllerMain controllerMain;
 
     @FXML
     private Button button1;
@@ -47,7 +50,6 @@ public class Controller implements ControllerParent {
 
     public Controller() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
         System.out.println("Zainicjalizowany Controller");
     }
 
@@ -90,7 +92,7 @@ public class Controller implements ControllerParent {
     } // Metody pól do kopiowania
 
     @FXML
-    public void stayOnTopAction(){
+    public void stayOnTopAction() {
         Main.changeStayOnTop(stayOnTopItem.isSelected());
     }
 
@@ -99,4 +101,44 @@ public class Controller implements ControllerParent {
         Main.closeApplication();
     }
 
+    @FXML
+    public void fiveFieldItem() {
+
+    }
+
+    @FXML
+    public void tenFieldItem() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("scene/viewControllerTwo.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ControllerTwo controllerTwo = loader.getController();
+        controllerTwo.setControllerMain(controllerMain);
+        controllerMain.setScreen(stackPane);
+
+    }
+
+    @FXML
+    public void fiveFieldCheckItem() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("scene/viewControllerCheckBox.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ControllerCheckBox controllerCheckBox = loader.getController();
+        controllerCheckBox.setControllerMain(controllerMain);
+        controllerMain.setScreen(stackPane);
+    }
+
+
+    public void setMainController(ControllerMain controllerMain) {
+        this.controllerMain = controllerMain;
+    }
 }
