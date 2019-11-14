@@ -34,7 +34,7 @@
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in2"/>
-                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0"
+                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton2" prefWidth="130.0"
                                 text="Button"/>
                         <CheckBox fx:id="checkbox2_1" mnemonicParsing="false">
                             <HBox.margin>
@@ -47,7 +47,7 @@
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in3"/>
-                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0"
+                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton3" prefWidth="130.0"
                                 text="Button"/>
                         <CheckBox fx:id="checkbox3_1" mnemonicParsing="false">
                             <HBox.margin>
@@ -60,7 +60,7 @@
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in4"/>
-                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0"
+                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton4" prefWidth="130.0"
                                 text="Button"/>
                         <CheckBox fx:id="checkbox4_1" mnemonicParsing="false">
                             <HBox.margin>
@@ -73,7 +73,7 @@
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in5"/>
-                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton1" prefWidth="130.0"
+                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" prefWidth="130.0"
                                 text="Button"/>
                         <CheckBox fx:id="checkbox5_1" mnemonicParsing="false">
                             <HBox.margin>
