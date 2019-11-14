@@ -9,9 +9,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+    private static boolean stayOnTop;
+    private static boolean stayOnTopProgram;
+    public static Stage window = null;
+
 
     @Override
     public void start(Stage primaryStage) {
+        window = primaryStage;
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("viewController.fxml"));
         StackPane stackPane = null;
@@ -22,16 +27,27 @@ public class Main extends Application {
         }
 
         Controller controller = loader.getController();
-        //ControllerCheckBox controllerCheckBox = loader.getController();
 
-        Scene scene = new Scene(stackPane, 243, 168);
+        Scene scene = new Scene(stackPane);
 
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(true);
-        primaryStage.setFullScreen(false);
-        primaryStage.setAlwaysOnTop(controller.isStay_on_top());
-        primaryStage.setTitle("Copy Text");
-        primaryStage.show();
+        window.setScene(scene);
+        window.setResizable(true);
+        window.setFullScreen(false);
+        window.setAlwaysOnTop(false);
+        window.show();
+    }
+
+    public static void changeStayOnTop(boolean value){
+        if (window.isAlwaysOnTop() != value) {
+            window.setAlwaysOnTop(value);
+        }
+    }
+
+    public static void closeApplication(){
+        window.close();
+    }
+    public static void changeScene(Scene scene){
+        window.setScene(scene);
     }
 
     public static void main(String[] args) {

@@ -4,9 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lyszczarzmariusz.Controller">
     <children>
-        <VBox prefHeight="200.0" prefWidth="100.0">
+        <VBox prefHeight="187.0" prefWidth="240.0">
             <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -14,8 +14,8 @@
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>
-                              <CheckMenuItem fx:id="stay_on_top" mnemonicParsing="false" text="Stay on top" />
-                          <MenuItem mnemonicParsing="false" text="Close" />
+                              <CheckMenuItem fx:id="stayOnTopItem" mnemonicParsing="false" onAction="#stayOnTopAction" text="Unspecified Action" />
+                          <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Edit">
@@ -35,31 +35,31 @@
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in1" />
-                        <Button fx:id="button1" mnemonicParsing="false" onAction="#onActionButton1" text="Button" />
+                        <Button fx:id="button1" mnemonicParsing="false" onAction="#onActionButton1" text="Copy" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in2" />
-                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton2" text="Button" />
+                        <Button fx:id="button2" mnemonicParsing="false" onAction="#onActionButton2" text="Copy" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in3" />
-                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton3" text="Button" />
+                        <Button fx:id="button3" mnemonicParsing="false" onAction="#onActionButton3" text="Copy" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in4" />
-                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton4" text="Button" />
+                        <Button fx:id="button4" mnemonicParsing="false" onAction="#onActionButton4" text="Copy" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <TextField fx:id="in5" />
-                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" text="Button" />
+                        <Button fx:id="button5" mnemonicParsing="false" onAction="#onActionButton5" text="Copy" />
                     </children>
                 </HBox>
             </children>
