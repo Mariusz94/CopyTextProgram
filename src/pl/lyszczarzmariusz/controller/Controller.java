@@ -1,19 +1,24 @@
-package pl.lyszczarzmariusz;
+package pl.lyszczarzmariusz.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.CheckMenuItem;
+import javafx.scene.layout.StackPane;
+import pl.lyszczarzmariusz.Main;
+
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
 
-public class ControllerTwo {
+public class Controller {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
-
 
     @FXML
     private Button button1;
@@ -25,16 +30,6 @@ public class ControllerTwo {
     private Button button4;
     @FXML
     private Button button5;
-    @FXML
-    private Button button6;
-    @FXML
-    private Button button7;
-    @FXML
-    private Button button8;
-    @FXML
-    private Button button9;
-    @FXML
-    private Button button10;
 
     @FXML
     private TextField in1;
@@ -46,35 +41,19 @@ public class ControllerTwo {
     private TextField in4;
     @FXML
     private TextField in5;
-    @FXML
-    private TextField in6;
-    @FXML
-    private TextField in7;
-    @FXML
-    private TextField in8;
-    @FXML
-    private TextField in9;
-    @FXML
-    private TextField in10;
 
-    public ControllerTwo() {
+    @FXML
+    private CheckMenuItem stayOnTopItem; //Definicje pól
+
+    public Controller() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        System.out.println("Zainicjalizowany ControllerTwo");
+
+        System.out.println("Zainicjalizowany Controller");
     }
 
     @FXML
     void initialize() {
-        button1.setText("Copy");
-        button2.setText("Copy");
-        button3.setText("Copy");
-        button4.setText("Copy");
-        button5.setText("Copy");
-        button6.setText("Copy");
-        button7.setText("Copy");
-        button8.setText("Copy");
-        button9.setText("Copy");
-        button10.setText("Copy");
-    }
+    } //Metoda wywoływana po konstruktorze klasy
 
     @FXML
     public void onActionButton1() {
@@ -101,31 +80,6 @@ public class ControllerTwo {
         copyText(in5);
     }
 
-    @FXML
-    public void onActionButton6() {
-        copyText(in6);
-    }
-
-    @FXML
-    public void onActionButton7() {
-        copyText(in7);
-    }
-
-    @FXML
-    public void onActionButton8() {
-        copyText(in8);
-    }
-
-    @FXML
-    public void onActionButton9() {
-        copyText(in9);
-    }
-
-    @FXML
-    public void onActionButton10() {
-        copyText(in10);
-    }
-
     private void copyText(TextField in) {
         text = in.getText();
         if (text == null) {
@@ -133,5 +87,16 @@ public class ControllerTwo {
         }
         selection = new StringSelection(text);
         clipboard.setContents(selection, null);
+    } // Metody pól do kopiowania
+
+    @FXML
+    public void stayOnTopAction(){
+        Main.changeStayOnTop(stayOnTopItem.isSelected());
     }
+
+    @FXML
+    public void closeAction() {
+        Main.closeApplication();
+    }
+
 }
