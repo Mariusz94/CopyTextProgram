@@ -1,9 +1,10 @@
 package pl.lyszczarzmariusz;
 
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
@@ -11,7 +12,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.ActionListener;
 
 
 public class ControllerCheckBox {
@@ -44,34 +44,35 @@ public class ControllerCheckBox {
     private TextField in5;
 
     @FXML
-    private Checkbox checkbox1_1;
+    private CheckBox checkbox1_1;
 
     @FXML
-    private Checkbox checkbox1_2;
+    private CheckBox checkbox1_2;
 
     @FXML
-    private Checkbox checkbox2_1;
+    private CheckBox checkbox2_1;
 
     @FXML
-    private Checkbox checkbox2_2;
+    private CheckBox checkbox2_2;
 
     @FXML
-    private Checkbox checkbox3_1;
+    private CheckBox checkbox3_1;
 
     @FXML
-    private Checkbox checkbox3_2;
+    private CheckBox checkbox3_2;
 
     @FXML
-    private Checkbox checkbox4_1;
+    private CheckBox checkbox4_1;
 
     @FXML
-    private Checkbox checkbox4_2;
+    private CheckBox checkbox4_2;
 
     @FXML
-    private Checkbox checkbox5_1;
+    private CheckBox checkbox5_1;
 
     @FXML
-    private Checkbox checkbox5_2;
+    private CheckBox checkbox5_2;
+
 
     public ControllerCheckBox() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();

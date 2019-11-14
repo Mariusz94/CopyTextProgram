@@ -21,14 +21,12 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        //Controller controller = loader.getController();
         ControllerCheckBox controllerCheckBox = loader.getController();
 
-
-        Scene scene = new Scene(stackPane, 243, 168);
+        Scene scene = new Scene(stackPane, 400, 200);
 
         primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
         primaryStage.setFullScreen(false);
         primaryStage.setAlwaysOnTop(true);
         primaryStage.setTitle("Copy Text");
