@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import pl.lyszczarzmariusz.controller.Controller;
+import pl.lyszczarzmariusz.controller.ControllerParent;
 
 import java.io.IOException;
 
@@ -18,20 +19,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         window = primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("scene/viewController.fxml"));
-        StackPane stackPane = null;
-        try {
-            stackPane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        Controller controller = loader.getController();
+        Main main = new Main();
+        main.changeScene("scene/viewController.fxml", new Controller());
 
-        Scene scene = new Scene(stackPane);
-
-        window.setScene(scene);
         window.setResizable(true);
         window.setFullScreen(false);
         window.setAlwaysOnTop(false);
@@ -47,7 +38,20 @@ public class Main extends Application {
     public static void closeApplication(){
         window.close();
     }
-    public static void changeScene(Scene scene){
+    public void changeScene(String sourceNameFXML, ControllerParent controller){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("scene/viewController.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        controller = loader.getController();
+
+        Scene scene = new Scene(stackPane);
+
         window.setScene(scene);
     }
 

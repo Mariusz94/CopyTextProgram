@@ -13,7 +13,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
 
-public class ControllerCheckBox {
+public class ControllerCheckBox implements ControllerParent {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;

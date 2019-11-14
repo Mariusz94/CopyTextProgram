@@ -9,7 +9,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
 
-public class ControllerTwo {
+public class ControllerTwo implements ControllerParent{
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;

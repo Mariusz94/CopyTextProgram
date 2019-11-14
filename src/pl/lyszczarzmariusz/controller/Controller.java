@@ -15,7 +15,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
 
-public class Controller {
+public class Controller implements ControllerParent {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
