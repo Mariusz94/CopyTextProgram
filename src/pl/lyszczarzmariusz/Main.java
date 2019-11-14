@@ -40,7 +40,7 @@ public class Main extends Application {
     }
     public void changeScene(String sourceNameFXML, ControllerParent controller){
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("viewControllerCheckBox.fxml"));
+        loader.setLocation(this.getClass().getResource(sourceNameFXML));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
