@@ -16,10 +16,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 
 
-public class ControllerCheckBox{
+public class ControllerCheckBox {
     private Clipboard clipboard;
     private StringSelection selection;
     private String text;
@@ -75,49 +76,49 @@ public class ControllerCheckBox{
     public ControllerCheckBox() {
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         jTextArea = new JTextArea();
+
         System.out.println("Zainicjalizowany ControllerCheckBox");
     }
 
     @FXML
-    void initialize(){
-
+    void initialize() {
     }
 
     @FXML
-    public void onActionButton1(){
+    public void onActionButton1() {
         copyTextFromInput(in1);
     }
 
     @FXML
-    public void onActionButton2(){
+    public void onActionButton2() {
         copyTextFromInput(in2);
     }
 
     @FXML
-    public void onActionButton3(){
+    public void onActionButton3() {
         copyTextFromInput(in3);
     }
 
     @FXML
-    public void onActionButton4(){
+    public void onActionButton4() {
         copyTextFromInput(in4);
     }
 
     @FXML
-    public void onActionButton5(){
+    public void onActionButton5() {
         copyTextFromInput(in5);
     }
 
     private void copyTextFromInput(TextField in) {
         text = in.getText();
-        if(text == null){
+        if (text == null) {
             text = "null";
         }
         selection = new StringSelection(text);
         clipboard.setContents(selection, null);
     }
 
-    private void copyHandler(TextField in, Checkbox ch1, Checkbox ch2){
+    private void copyHandler(TextField in, Checkbox ch1, Checkbox ch2) {
         copyTextFromInput(in);
 
         if (ch1.getState()) {
@@ -134,7 +135,7 @@ public class ControllerCheckBox{
     }
 
     @FXML
-    public void stayOnTopAction(){
+    public void stayOnTopAction() {
         Main.changeStayOnTop(stayOnTopItem.isSelected());
     }
 
@@ -162,7 +163,7 @@ public class ControllerCheckBox{
         controllerTwo.setControllerMain(controllerMain);
 
         controllerMain.setScreen(stackPane);
-        Main.setSizeWindow(300,390);
+        Main.setSizeWindow(300, 390);
     }
 
     @FXML
@@ -173,4 +174,6 @@ public class ControllerCheckBox{
     public void setControllerMain(ControllerMain controllerMain) {
         this.controllerMain = controllerMain;
     }
+
+
 }

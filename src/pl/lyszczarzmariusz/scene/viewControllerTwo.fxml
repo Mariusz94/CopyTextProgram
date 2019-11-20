@@ -22,7 +22,7 @@
                                     <items>
                                         <MenuItem mnemonicParsing="false" onAction="#fiveFieldItem" text="5 Field" />
                                         <MenuItem mnemonicParsing="false" onAction="#tenFieldItem" text="10 Field" />
-                                        <MenuItem mnemonicParsing="false" onAction="#fiveFieldCheckItem" text="5 Field witch Auto Select Auto Click" />
+                                        <MenuItem disable="true" mnemonicParsing="false" onAction="#fiveFieldCheckItem" text="5 Field witch Auto Select Auto Click" />
                                     </items>
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="Help">

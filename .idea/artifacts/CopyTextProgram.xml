@@ -5,10 +5,12 @@
       <options>
         <option name="appClass" value="pl.lyszczarzmariusz.Main" />
         <option name="description" value="" />
+        <option name="height" value="187" />
         <option name="htmlPlaceholderId" value="" />
         <option name="title" value="CopyTextProgram" />
         <option name="vendor" value="" />
         <option name="version" value="" />
+        <option name="width" value="240" />
       </options>
     </properties>
     <root id="root">
