@@ -175,5 +175,5 @@ public class ControllerCheckBox {
         this.controllerMain = controllerMain;
     }
 
-
+ //todo funkcjonalnośc check
 }
